@@ -1,7 +1,9 @@
+//A simple code i made in school for my assygment, programs need to check if received consequence of brackets are closed properly
+// for example (()(()) are properly closed brackets but ()()) are not
 class Solution {
 public:
     int countCharacters(vector<string>& words, string chars) {
-    vector<char> stor;
+    vector<char> stor; //create some vector to store our brackets
     int sum = 0;
         for (char ch : chars){
             stor.push_back(ch);
@@ -13,7 +15,7 @@ public:
                 for (int j = 0; j < stor1.size(); j++){
                     if (word[i] == stor1[j]){
                         len++;
-                        stor1.erase(stor1.begin()+j);
+                        stor1.erase(stor1.begin()+j); 
                         break;
 
                     }
