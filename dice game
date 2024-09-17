@@ -1,0 +1,58 @@
+// i honestly dont even rember what the task was, but someting about numbers that you can get when playing with to dices.
+#include <iostream>
+#include <deque>
+#include <vector>
+#include <set>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    for ( int i = 0; i<t; i++){
+        int a,b;
+        cin >> a >> b;
+        int res1win[a], res2win[b];
+        int min1 = 0;
+        int min2 = 0;
+        int max1 = 0;
+        int max2 = 0;
+        for (int j = 0; j < a; j++) {
+            int a1;
+            cin >> a1;
+            res1win[j] = a1;
+            max1 += a1;
+        }
+        for (int j = 0; j < b; j++) {
+            int a2;
+            cin >> a2;
+            res2win[j] = a2;
+            max2 += a2;
+        }
+        string s = "";
+        min1=1*a;
+        min2=1*b;
+
+        if (max1 > min2){
+            s+="Y";
+        }else{
+            s+="N";
+        }
+        
+        if(max1 >= min2 && max2 >= min1){
+            s+="Y";
+        }else{
+            s+="N";
+        }
+
+        if(max2 > min1){
+            s+="Y";
+        }else{
+            s+="N";
+        }
+        cout << s << endl;
+    }
+ 
+
+    return 0;
+}
